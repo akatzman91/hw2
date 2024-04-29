@@ -202,6 +202,84 @@ role_1 ["actor_id"] = actor_1.id
 role_1 ["character_name"] = "Bruce Wayne"
 role_1.save
 
+role_2 = Role.new
+role_2 ["movie_id"] = movie_1.id
+role_2 ["actor_id"] = actor_2.id
+role_2 ["character_name"] = "Alfred"
+role_2.save
+
+role_2 = Role.new
+role_2 ["movie_id"] = movie_2.id
+role_2 ["actor_id"] = actor_2.id
+role_2 ["character_name"] = "Alfred"
+role_2.save
+
+role_3 = Role.new
+role_3 ["movie_id"] = movie_1.id
+role_3 ["actor_id"] = actor_3.id
+role_3 ["character_name"] = "Ra's Al Ghul"
+role_3.save
+
+role_4 = Role.new
+role_4 ["movie_id"] = movie_1.id
+role_4 ["actor_id"] = actor_4.id
+role_4 ["character_name"] = "Rachel Dawes"
+role_4.save
+
+role_4 = Role.new
+role_4 ["movie_id"] = movie_2.id
+role_4 ["actor_id"] = actor_4.id
+role_4 ["character_name"] = "Rachel Dawes"
+role_4.save
+
+role_5 = Role.new
+role_5 ["movie_id"] = movie_1.id
+role_5 ["actor_id"] = actor_5.id
+role_5 ["character_name"] = "Commissioner Gordon"
+role_5.save
+
+role_5 = Role.new
+role_5 ["movie_id"] = movie_2.id
+role_5 ["actor_id"] = actor_5.id
+role_5 ["character_name"] = "Commissioner Gordon"
+role_5.save
+
+role_6 = Role.new
+role_6 ["movie_id"] = movie_2.id
+role_6 ["actor_id"] = actor_6.id
+role_6 ["character_name"] = "Joker"
+role_6.save
+
+role_7 = Role.new
+role_7 ["movie_id"] = movie_2.id
+role_7 ["actor_id"] = actor_7.id
+role_7 ["character_name"] = "Harvey Dent"
+role_7.save
+
+role_8 = Role.new
+role_8 ["movie_id"] = movie_2.id
+role_8 ["actor_id"] = actor_8.id
+role_8 ["character_name"] = "Rachel Dawes"
+role_8.save
+
+role_9 = Role.new
+role_9 ["movie_id"] = movie_3.id
+role_9 ["actor_id"] = actor_9.id
+role_9 ["character_name"] = "Bane"
+role_9.save
+
+role_10 = Role.new
+role_10 ["movie_id"] = movie_3.id
+role_10 ["actor_id"] = actor_10.id
+role_10 ["character_name"] = "John Blake"
+role_10.save
+
+role_11 = Role.new
+role_11 ["movie_id"] = movie_3.id
+role_11 ["actor_id"] = actor_11.id
+role_11 ["character_name"] = "Selina Kyle"
+role_11.save
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
