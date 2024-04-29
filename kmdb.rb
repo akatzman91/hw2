@@ -119,8 +119,6 @@ studio_1 = Studio.new
 studio_1 ["name"] = "Warner Bros."
 studio_1.save
 
-puts "#{Studio.all.count}"
-
 movie_1 = Movie.new
 movie_1 ["title"] = "Batman Begins"
 movie_1 ["year_released"] = "2005"
@@ -141,8 +139,6 @@ movie_3 ["year_released"] = "2012"
 movie_3 ["rated"] = "PG-13"
 movie_3 ["studio_id"] = studio_1.id
 movie_3.save
-
-puts "#{Movie.all.count}"
 
 actor_1 = Actor.new
 actor_1 ["name"] = "Christian Bale"
@@ -187,8 +183,6 @@ actor_10.save
 actor_11 = Actor.new
 actor_11 ["name"] = "Anne Hathaway"
 actor_11.save
-
-puts "#{Actor.all.count}"
 
 role_1 = Role.new
 role_1 ["movie_id"] = movie_1.id
@@ -279,8 +273,6 @@ role_11 ["movie_id"] = movie_3.id
 role_11 ["actor_id"] = actor_11.id
 role_11 ["character_name"] = "Selina Kyle"
 role_11.save
-
-puts "#{Role.all.count}"
 
 # Prints a header for the movies output
 puts "Movies"
