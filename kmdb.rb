@@ -119,6 +119,8 @@ studio_1 = Studio.new
 studio_1 ["name"] = "Warner Bros."
 studio_1.save
 
+puts "#{Studio.all.count}"
+
 movie_1 = Movie.new
 movie_1 ["title"] = "Batman Begins"
 movie_1 ["year_released"] = "2005"
@@ -135,10 +137,12 @@ movie_2.save
 
 movie_3 = Movie.new
 movie_3 ["title"] = "The Dark Knight Rises"
-movie_3 ["year_released"] = "2008"
+movie_3 ["year_released"] = "2012"
 movie_3 ["rated"] = "PG-13"
 movie_3 ["studio_id"] = studio_1.id
 movie_3.save
+
+puts "#{Movie.all.count}"
 
 actor_1 = Actor.new
 actor_1 ["name"] = "Christian Bale"
@@ -184,6 +188,8 @@ actor_11 = Actor.new
 actor_11 ["name"] = "Anne Hathaway"
 actor_11.save
 
+puts "#{Actor.all.count}"
+
 role_1 = Role.new
 role_1 ["movie_id"] = movie_1.id
 role_1 ["actor_id"] = actor_1.id
@@ -226,12 +232,6 @@ role_4 ["actor_id"] = actor_4.id
 role_4 ["character_name"] = "Rachel Dawes"
 role_4.save
 
-role_4 = Role.new
-role_4 ["movie_id"] = movie_2.id
-role_4 ["actor_id"] = actor_4.id
-role_4 ["character_name"] = "Rachel Dawes"
-role_4.save
-
 role_5 = Role.new
 role_5 ["movie_id"] = movie_1.id
 role_5 ["actor_id"] = actor_5.id
@@ -239,7 +239,7 @@ role_5 ["character_name"] = "Commissioner Gordon"
 role_5.save
 
 role_5 = Role.new
-role_5 ["movie_id"] = movie_2.id
+role_5 ["movie_id"] = movie_3.id
 role_5 ["actor_id"] = actor_5.id
 role_5 ["character_name"] = "Commissioner Gordon"
 role_5.save
@@ -279,6 +279,8 @@ role_11 ["movie_id"] = movie_3.id
 role_11 ["actor_id"] = actor_11.id
 role_11 ["character_name"] = "Selina Kyle"
 role_11.save
+
+puts "#{Role.all.count}"
 
 # Prints a header for the movies output
 puts "Movies"
