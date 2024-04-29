@@ -71,14 +71,136 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-Model.destroy_all
+Actor.destroy_all
+Movie.destroy_all
+Role.destroy_all
+Studio.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
 
+ActiveRecord::Schema[7.1].define(version: 2024_04_29_180457) do
+    create_table "actors", force: :cascade do |t|
+      t.string "name"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+    end
+  
+    create_table "movies", force: :cascade do |t|
+      t.string "title"
+      t.integer "year_released"
+      t.string "rated"
+      t.integer "studio_id"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+    end
+  
+    create_table "roles", force: :cascade do |t|
+      t.integer "movie_id"
+      t.integer "actor_id"
+      t.string "character_name"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+    end
+  
+    create_table "studios", force: :cascade do |t|
+      t.string "name"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+    end
+  
+  end
+
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+studio_1 = Studio.new
+studio_1 ["name"] = "Warner Bros."
+studio_1.save
+
+movie_1 = Movie.new
+movie_1 ["title"] = "Batman Begins"
+movie_1 ["year_released"] = "2005"
+movie_1 ["rated"] = "PG-13"
+movie_1 ["studio_id"] = studio_1.id
+movie_1.save
+
+movie_2 = Movie.new
+movie_2 ["title"] = "The Dark Knight"
+movie_2 ["year_released"] = "2008"
+movie_2 ["rated"] = "PG-13"
+movie_2 ["studio_id"] = studio_1.id
+movie_2.save
+
+movie_3 = Movie.new
+movie_3 ["title"] = "The Dark Knight Rises"
+movie_3 ["year_released"] = "2008"
+movie_3 ["rated"] = "PG-13"
+movie_3 ["studio_id"] = studio_1.id
+movie_3.save
+
+actor_1 = Actor.new
+actor_1 ["name"] = "Christian Bale"
+actor_1.save
+
+actor_2 = Actor.new
+actor_2 ["name"] = "Michael Caine"
+actor_2.save
+
+actor_3 = Actor.new
+actor_3 ["name"] = "Liam Neeson"
+actor_3.save
+
+actor_4 = Actor.new
+actor_4 ["name"] = "Katie Holmes"
+actor_4.save
+
+actor_5 = Actor.new
+actor_5 ["name"] = "Gary Oldman"
+actor_5.save
+
+actor_6 = Actor.new
+actor_6 ["name"] = "Heath Ledger"
+actor_6.save
+
+actor_7 = Actor.new
+actor_7 ["name"] = "Aaron Eckhart"
+actor_7.save
+
+actor_8 = Actor.new
+actor_8 ["name"] = "Maggie Gyllenhaal"
+actor_8.save
+
+actor_9 = Actor.new
+actor_9 ["name"] = "Tom Hardy"
+actor_9.save
+
+actor_10 = Actor.new
+actor_10 ["name"] = "Joseph Gordon-Levitt"
+actor_10.save
+
+actor_11 = Actor.new
+actor_11 ["name"] = "Anne Hathaway"
+actor_11.save
+
+role_1 = Role.new
+role_1 ["movie_id"] = movie_1.id
+role_1 ["actor_id"] = actor_1.id
+role_1 ["character_name"] = "Bruce Wayne"
+role_1.save
+
+role_1 = Role.new
+role_1 ["movie_id"] = movie_2.id
+role_1 ["actor_id"] = actor_1.id
+role_1 ["character_name"] = "Bruce Wayne"
+role_1.save
+
+role_1 = Role.new
+role_1 ["movie_id"] = movie_3.id
+role_1 ["actor_id"] = actor_1.id
+role_1 ["character_name"] = "Bruce Wayne"
+role_1.save
 
 # Prints a header for the movies output
 puts "Movies"
