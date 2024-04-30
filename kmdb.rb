@@ -293,7 +293,7 @@ for studio in all_studios
   end
 end
 
-    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{studio_name} "
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{studio_name}"
 end
 
 # Prints a header for the cast output
@@ -304,14 +304,23 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
-
 all_roles = Role.all
+all_movies = Movie.all
+all_actors = Actor.all
+
+movie_titles ={}
+for movie in all_movies
+  movie_titles[movie.id] = movie.title
+end
+
+actor_names ={}
+for actor in all_actors
+  actor_names[actor.id] = actor.name
+end
 
 for role in all_roles
-    # p movie
-    movie = role["movie_id"]
-    actor = role["actor_id"]
-    character_name = role["character_name"]
+  movie_title = movie_titles[role.movie_id]
+  actor_name = actor_names[role.actor_id]
 
-    puts "#{character_name} #{movie} #{actor}"
+    puts "#{movie_title} #{role.character_name} #{actor_name}"
 end
