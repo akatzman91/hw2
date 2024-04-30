@@ -322,5 +322,5 @@ for role in all_roles
   movie_title = movie_titles[role.movie_id]
   actor_name = actor_names[role.actor_id]
 
-    puts "#{movie_title} #{role.character_name} #{actor_name}"
+    puts "#{movie_title} #{actor_name} #{role.character_name}"
 end
