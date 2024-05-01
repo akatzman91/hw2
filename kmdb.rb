@@ -270,9 +270,9 @@ all_roles = Role.all
 all_movies = Movie.all
 all_actors = Actor.all
 
-for movie in all_movies
-  roles = Role.where({"movie_id" => movie["id"]})
-  actors = Actor.where({"movie_id" => movie["id"]})
+for role in all_roles
+  movies = Movie.where({"role_id" => role["id"]})
+  actors = Actor.where({"role_id" => role["id"]})
 
-    puts "#{movie_title} #{actor_name} #{role.character_name}"
+    puts "#{role.movie_id} #{role.actor_id} #{role.character_name}"
 end
