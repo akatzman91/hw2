@@ -158,26 +158,8 @@ role_1 ["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
 role_1 ["character_name"] = "Bruce Wayne"
 role_1.save
 
-role_1 = Role.new
-role_1 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight"})["id"]
-role_1 ["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
-role_1 ["character_name"] = "Bruce Wayne"
-role_1.save
-
-role_1 = Role.new
-role_1 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight Rises"})["id"]
-role_1 ["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
-role_1 ["character_name"] = "Bruce Wayne"
-role_1.save
-
 role_2 = Role.new
 role_2 ["movie_id"] = Movie.find_by({"title" => "Batman Begins"})["id"]
-role_2 ["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
-role_2 ["character_name"] = "Alfred"
-role_2.save
-
-role_2 = Role.new
-role_2 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight"})["id"]
 role_2 ["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
 role_2 ["character_name"] = "Alfred"
 role_2.save
@@ -200,11 +182,11 @@ role_5 ["actor_id"] = Actor.find_by({"name" => "Gary Oldman"})["id"]
 role_5 ["character_name"] = "Commissioner Gordon"
 role_5.save
 
-role_5 = Role.new
-role_5 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight Rises"})["id"]
-role_5 ["actor_id"] = Actor.find_by({"name" => "Gary Oldman"})["id"]
-role_5 ["character_name"] = "Commissioner Gordon"
-role_5.save
+role_1 = Role.new
+role_1 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight"})["id"]
+role_1 ["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
+role_1 ["character_name"] = "Bruce Wayne"
+role_1.save
 
 role_6 = Role.new
 role_6 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight"})["id"]
@@ -218,11 +200,29 @@ role_7 ["actor_id"] = Actor.find_by({"name" => "Aaron Eckhart"})["id"]
 role_7 ["character_name"] = "Harvey Dent"
 role_7.save
 
+role_2 = Role.new
+role_2 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight"})["id"]
+role_2 ["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
+role_2 ["character_name"] = "Alfred"
+role_2.save
+
 role_8 = Role.new
 role_8 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight"})["id"]
 role_8 ["actor_id"] = Actor.find_by({"name" => "Maggie Gyllenhaal"})["id"]
 role_8 ["character_name"] = "Rachel Dawes"
 role_8.save
+
+role_1 = Role.new
+role_1 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight Rises"})["id"]
+role_1 ["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
+role_1 ["character_name"] = "Bruce Wayne"
+role_1.save
+
+role_5 = Role.new
+role_5 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight Rises"})["id"]
+role_5 ["actor_id"] = Actor.find_by({"name" => "Gary Oldman"})["id"]
+role_5 ["character_name"] = "Commissioner Gordon"
+role_5.save
 
 role_9 = Role.new
 role_9 ["movie_id"] = Movie.find_by({"title" => "The Dark Knight Rises"})["id"]
