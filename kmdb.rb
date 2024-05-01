@@ -253,9 +253,9 @@ all_movies = Movie.all
 all_studios = Studio.all
 
 for movie in all_movies
-  studios = Studio.where({"movie_id" => movie["id"]})
+  studios = Studio.find_by({"id" => movie["studio_id"]})
 
-    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{studios}"
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{studios.name}"
 end
 
 # Prints a header for the cast output
