@@ -79,38 +79,6 @@ Studio.destroy_all
 # Generate models and tables, according to the domain model.
 # TODO!
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_29_180457) do
-    create_table "actors", force: :cascade do |t|
-      t.string "name"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "movies", force: :cascade do |t|
-      t.string "title"
-      t.integer "year_released"
-      t.string "rated"
-      t.integer "studio_id"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "roles", force: :cascade do |t|
-      t.integer "movie_id"
-      t.integer "actor_id"
-      t.string "character_name"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "studios", force: :cascade do |t|
-      t.string "name"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-  end
-
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
@@ -285,15 +253,9 @@ all_movies = Movie.all
 all_studios = Studio.all
 
 for movie in all_movies
-  studio_name = "Warner Bros."
+  studios = Studio.where({"movie_id" => movie["id"]})
 
-for studio in all_studios
-    if  studio.id == movie.studio_id 
-      studio_name = studio.name
-  end
-end
-
-    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{studio_name}"
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{studios}"
 end
 
 # Prints a header for the cast output
@@ -308,19 +270,9 @@ all_roles = Role.all
 all_movies = Movie.all
 all_actors = Actor.all
 
-movie_titles ={}
 for movie in all_movies
-  movie_titles[movie.id] = movie.title
-end
-
-actor_names ={}
-for actor in all_actors
-  actor_names[actor.id] = actor.name
-end
-
-for role in all_roles
-  movie_title = movie_titles[role.movie_id]
-  actor_name = actor_names[role.actor_id]
+  roles = Role.where({"movie_id" => movie["id"]})
+  actors = Actor.where({"movie_id" => movie["id"]})
 
     puts "#{movie_title} #{actor_name} #{role.character_name}"
 end
